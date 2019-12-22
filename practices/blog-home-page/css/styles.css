@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
+
+body,
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.main-wrapper {
+    background-image: url('../img/Cover.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #202121;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.social-media {
+    background-color: #64CFAE;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.social-media__container {
+    margin-right: 50px;
+}
+
+.social-media__container [class^="flaticon-"],
+[class^="flaticon-"]::before {
+    color: #fff;
+    font-size: 25px;
+}
+
+.nav {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: "logo . link";
+    align-items: center;
+    justify-items: end;
+}
+
+.nav__logo {
+    grid-area: logo;
+}
+
+.nav__logo img {
+    width: 300px;
+}
+
+.nav__link {
+    grid-area: link;
+    margin-right: 70px;
+}
+
+.nav__link a {
+    color: #e6e9ed;
+    text-decoration: none;
+    border-bottom: 1px solid;
+    letter-spacing: 2px;
+    font-size: 1.3em;
+}
+
+.nav__link a:hover{
+    color: white;
+    font-weight: bold;
+}
+
+.main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.main__description p {
+    color: #fff;
+    letter-spacing: 5px;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.main__link {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    padding: 15px;
+    outline: none;
+    border: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn:hover{
+    transform: scale(1.1, 1.1);
+}
+
+.btn--primary {
+    background-color: #64CFAE;
+}
+
+.btn--primary:hover{
+    background-color: rgba(100, 207, 173, 0.644);
+    color: #e6e9ed;
+}
+
+@media screen and (max-width: 576px) {
+    .main-wrapper {
+        width: 100%;
+    }
+
+    .social-media__container{
+        margin: 0;
+    }
+
+    .social-media {
+        justify-content: center;
+    }
+
+    .nav {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "logo link";
+    }
+
+    .nav__logo img {
+        width: 150px;
+    }
+
+    .nav__link{
+        margin-right: auto;
+    }
+
+    .nav__link a {
+        letter-spacing: normal;
+    }
+}
