@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
+
+$primary: #64cfae;
+$white: #fff;
+$break-small: 800px;
+$font-family: 'Roboto', sans-serif;
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: $font-family;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-wrapper {
+  background-image: url('../img/Cover.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #121212;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+}
+
+/* Header */
+
+.header {
+  overflow: hidden;
+  width: 100%;
+
+  .social-media-container {
+    @extend .center;
+    justify-content: flex-end;
+    background-color: $primary;
+    height: 50px;
+
+    @media screen and (max-width: $break-small) {
+      justify-content: center;
+    }
+
+    & [class^='flaticon-'],
+    [class^='flaticon-']::before {
+      color: $white;
+      font-size: 25px;
+      margin: 0 auto;
+      padding: 5px;
+    }
+
+    .social-media-container__items {
+      margin-right: 50px;
+
+      @media screen and (max-width: $break-small) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .nav {
+    padding-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    .logo {
+      margin: 0;
+      display: flex;
+      justify-content: flex-start;
+      @media screen and (max-width: $break-small) {
+        justify-content: center;
+      }
+      &__img {
+        width: 300px;
+        @media screen and (max-width: $break-small) {
+          width: 100%;
+        }
+      }
+    }
+
+    &__items {
+      display: flex;
+      justify-self: right;
+      @media screen and (max-width: $break-small) {
+        text-align: center;
+      }
+    }
+
+    &__link {
+      margin-right: 70px;
+      color: $white;
+      font-size: 1.2rem;
+      text-decoration: underline;
+      letter-spacing: 2px;
+
+      @media screen and (max-width: $break-small) {
+        font-size: 0.9em;
+        letter-spacing: 0;
+      }
+    }
+  }
+}
+
+.main {
+  text-align: center;
+
+  &__description {
+    color: $white;
+    letter-spacing: 8px;
+    font: {
+      family: $font-family;
+      size: 2.3em;
+      weight: bold;
+    }
+    @media screen and (max-width: $break-small) {
+      font-size: 1.7em;
+      letter-spacing: 0px;
+    }
+  }
+}
+
+.btn {
+  cursor: pointer;
+  padding: 20px;
+  width: 120px;
+  border: 0;
+  outline: none;
+  font : {
+    weight: bolder;
+    size: 16px;
+  }
+  letter-spacing: 1px;
+}
+
+.btn--primary {
+  background-color: $primary;
+}
