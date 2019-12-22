@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Areas</title>
+    <style>
+      .container {
+        display: grid;
+        grid-template: 100px 1fr 150px / 200px 1fr;
+        grid-gap: 10px;
+        grid-template-areas:
+          'header header'
+          'aside content'
+          'footer footer';
+        height: 100vh;
+      }
+
+      .item {
+        background-color: lightblue;
+        border: 1px solid red;
+      }
+
+      .header {
+        grid-area: header;
+      }
+
+      .aside {
+        grid-area: aside;
+      }
+
+      .section {
+        grid-area: content;
+      }
+
+      .footer {
+        grid-area: footer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header item">Header</header>
+      <aside class="aside item">Left</aside>
+      <section class="section item">Content</section>
+      <footer class="footer item">Footer</footer>
+    </div>
+  </body>
+</html>
